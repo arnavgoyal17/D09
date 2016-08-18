@@ -47,6 +47,36 @@ import sys
 
 ###
 
+def print_words(filename):
+    dictWordCount = {}
+
+    with open(filename, "r") as file:
+        for items in file:
+            lineItems = items.strip().split()
+            for words in lineItems:
+                dictWordCount[words.lower()] = dictWordCount.get(words.lower(), 0) + 1
+
+    keyList = sorted(sorted(dictWordCount), key=dictWordCount.__getitem__, reverse=True)
+    for keys in keyList:
+        print("{} {}".format(str(keys), str(dictWordCount.get(keys))))
+
+def print_top(filename):
+    dictWordCount = {}
+
+    with open(filename, "r") as file:
+        for items in file:
+            lineItems = items.strip().split()
+            for words in lineItems:
+                dictWordCount[words.lower()] = dictWordCount.get(words.lower(), 0) + 1
+
+    keyList = sorted(sorted(dictWordCount), key=dictWordCount.__getitem__, reverse=True)
+
+    count = 1
+    for keys in keyList:
+        print("{} {}".format(str(keys), str(dictWordCount.get(keys))))
+        count += 1
+        if(count > 20):
+            break
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.

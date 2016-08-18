@@ -12,7 +12,21 @@
 
 # Body
 def most_frequent(s):
-    ...
+    
+    # convert the string to lowercase
+    s = s.lower()
+
+    # define a dict that will hold the counts
+    dictCounts = {}
+
+    sList = s.split()
+    for items in sList:
+      for chars in items:
+        dictCounts[chars] = dictCounts.get(chars, 0) + 1
+
+    output = sorted(sorted(dictCounts), key=dictCounts.__getitem__, reverse=True)
+    for values in output:
+      print(values)
 
 
 ###############################################################################

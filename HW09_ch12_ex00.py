@@ -13,7 +13,8 @@
 # Imports
 
 # Body
-
+def sumall(*args):
+    return sum(args)
 
 ##############################################################################
 def main():   # DO NOT CHANGE BELOW
